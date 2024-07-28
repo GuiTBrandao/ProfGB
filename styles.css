@@ -4,6 +4,10 @@ body {
     
 }
 
+table {
+    align-items: center;
+}
+
 p {
     font-size: large;
 }
