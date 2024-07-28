@@ -5,6 +5,7 @@ body {
 
 table, tr {
     width: 90%;
+    border-collapse: collapse;
 }
 
 th, td {
