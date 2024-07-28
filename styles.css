@@ -4,10 +4,20 @@ body {
     
 }
 
-table {
-    align-items: center;
+table th td {
+    text-align: center;
+    border-collapse: collapse;
 }
 
 p {
     font-size: large;
+}
+
+a {
+    background-color: rgb(80, 80, 80);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
