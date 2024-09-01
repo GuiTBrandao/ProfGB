@@ -49,4 +49,33 @@ a:hover, a:active {
   }
 
 
+  .accordion {
+    max-width: 350px;
+    text-align: center;
+  }
+  
+  article {
+    border: 1px solid black;
+    padding: 1em;
+    margin: 1em auto;
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  input[type="checkbox"] {
+    appearance: none;
+    position: fixed;
+    top: -100vh; left: -100vh;
+  
+    & ~ div {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s;
+    }
+  
+    &:checked ~ div {
+      max-height: 200px;
+    }
+  }
+
 
