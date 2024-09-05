@@ -78,6 +78,10 @@ article {
     border-radius: 15px;
     text-align: center;
   }
+
+article:hover, article:active {
+  background-color: rgb(255, 195, 147)    ;
+  }
   
 input[type="checkbox"] {
     appearance: none;
