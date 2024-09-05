@@ -7,27 +7,50 @@
     <title>2° Médio</title>
 </head>
 <body>
-    <h1>2° Médio</h1>
-    <br>
     <a class="tipo1" href="https://guitbrandao.github.io/ProfGB/">Home</a>
     <br>
-    <table>
-        <tr>
-            <th>Data da Prova Mensal: 02/09/24</th>
-        </tr>
-        <tr>
-            <th>Data da Prova Interdisciplinar: 25/09/24</th>
-        </tr>
-    <table>
-        <tr>
-            <th><a class="tipo1" href="2medio/propdet.html">Propriedades dos Determinantes</a></th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <th><a class="tipo1" href="2medio/prova3bim.html">Respostas Avaliação Mensal 3 Bim</a></th>
-        </tr>
-    </table>
+    <h1>2° Médio</h1>
     
+    <div class="accordion">
+        <article>
+          <input id="article1" type="checkbox" name="articles" unchecked>
+          <label for="article1">
+            <h2>Avaliações</h2>
+          </label>
+          <div>
+            <br><br>
+            <p>Avaliação Mensal: 02/09/24</p>
+            <div class="botao2"><a class="tipo1" href="2medio/prova3bim.html">Correção Avaliação Mensal</a></div><br>
+            <p>Avaliação Interdisciplinar: 25/09/24</p>
+          </div>
+        </article>            
+    </div>
+    
+    <div class="accordion">
+            <article>
+              <input id="article2" type="checkbox" name="articles" unchecked>
+              <label for="article2">
+                <h2>Atividades em Sala</h2>
+              </label>
+              <div>
+                <br><br>
+                <div class="botao2"><a class="tipo1" href="2medio/propdet.html">Propriedades dos Determinantes</a></div><br>
+              </div>
+            </article>            
+    </div>
+    
+    <div class="accordion">
+            <article>
+              <input id="article3" type="checkbox" name="articles" unchecked>
+              <label for="article3">
+                <h2>Atividades em Para Casa</h2>
+              </label>
+              <div>
+                <br><br>
+                <p>Data Limite: </p>
+                <div class="botao2">Nada aqui, por hora</div><br>
+              </div>
+            </article>            
+    </div>
 </body>
 </html>
