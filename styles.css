@@ -33,6 +33,19 @@ p {
     font-size: large;
   }
 
+.box {
+  width: 50px;
+  margin: auto;
+}
+
+.pre 
+  {
+    font-size: large;
+    width: max-content;
+    text-align: left;
+    
+  }
+
 a.tipo2 {
     width: 350px;
     text-align: center;
