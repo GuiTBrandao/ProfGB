@@ -34,8 +34,13 @@ p {
   }
 
 .box {
-  width: 50px;
-  margin: auto;
+    width: 100%; /* A caixa ocupará 100% da largura disponível */
+    max-width: 800px; /* Limite de largura máxima */
+    margin: 0 auto; /* Centraliza a caixa */
+    padding: 20px;
+    background-color: #f0f0f0; /* Cor de fundo da caixa */
+    border: 1px solid #ccc; /* Borda da caixa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
 }
 
 .pre 
