@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .exercise {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            max-width: 500px;
+        }
+
+        .exercise img {
+            width: 300px; /* Defina o tamanho exato da imagem aqui */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .list {
+            width: 45%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 200px;
+        }
+
+        .item {
+            padding: 8px;
+            margin: 5px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .dropzone {
+            border: 2px dashed #ccc;
+            min-height: 50px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .correct {
+            background-color: #d4edda;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Exercícios</h1>
+
+    <div class="exercise">
+        <p>Pergunta 1: Qual é a raiz quadrada de 16?</p>
+        <img src="exemplo.jpg" alt="Imagem Exemplo" /> <!-- Imagem opcional -->
+        <input type="text" id="resposta1" placeholder="Digite sua resposta">
+        <button onclick="verificarResposta(1, '4')">Verificar</button>
+        <p class="feedback" id="feedback1"></p>
+    </div>
+
+    <div class="exercise">
+        <p>Pergunta 1: Qual é a raiz quadrada de 25?</p>
+        <img src="exemplo.jpg" alt="Imagem Exemplo" /> <!-- Imagem opcional -->
+        <input type="text" id="resposta2" placeholder="Digite sua resposta">
+        <button onclick="verificarResposta(2, 'teste')">Verificar</button>
+        <p class="feedback" id="feedback2"></p>
+    </div>
+
+    <h1>Relacione as palavras com seus significados</h1>
+    
+    <div class="container">
+        <!-- Lista de Palavras -->
+        <div class="list">
+            <h3>Palavras</h3>
+            <div class="item" draggable="true" ondragstart="drag(event)" id="palavra1">Abelha</div>
+            <div class="item" draggable="true" ondragstart="drag(event)" id="palavra2">Cachorro</div>
+            <div class="item" draggable="true" ondragstart="drag(event)" id="palavra3">Computador</div>
+        </div>
+
+        <!-- Lista de Significados -->
+        <div class="list">
+            <h3>Significados</h3>
+            <div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" id="significado1">Animal que produz mel</div>
+            <div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" id="significado2">Melhor amigo do homem</div>
+            <div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" id="significado3">Máquina que processa informações</div>
+        </div>
+    </div>
+
+    <button onclick="verificar()">Verificar Respostas</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarResposta(numeroPergunta, respostaCorreta) {
+            const respostaAluno = document.getElementById(`resposta${numeroPergunta}`).value;
+            const feedbackElement = document.getElementById(`feedback${numeroPergunta}`);
+            
+            if (respostaAluno.trim() === respostaCorreta) {
+                feedbackElement.textContent = "Correto!";
+                feedbackElement.style.color = "green";
+            } else {
+                feedbackElement.textContent = "Incorreto. Tente novamente.";
+                feedbackElement.style.color = "red";
+            }
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var data = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(data));
+        }
+
+        function verificar() {
+            // Define as combinações corretas
+            const combinacoes = {
+                significado1: "palavra1", // Abelha - Animal que produz mel
+                significado2: "palavra2", // Cachorro - Melhor amigo do homem
+                significado3: "palavra3"  // Computador - Máquina que processa informações
+            };
+
+            let correto = true;
+
+            // Verifica se os itens foram colocados nas zonas corretas
+            for (const [significado, palavra] of Object.entries(combinacoes)) {
+                const dropzone = document.getElementById(significado);
+                if (dropzone.children.length > 0 && dropzone.children[0].id === palavra) {
+                    dropzone.classList.add("correct");
+                    dropzone.classList.remove("incorrect");
+                } else {
+                    dropzone.classList.add("incorrect");
+                    dropzone.classList.remove("correct");
+                    correto = false;
+                }
+            }
+
+            // Exibe o resultado
+            const resultado = document.getElementById("resultado");
+            if (correto) {
+                resultado.textContent = "Todas as correspondências estão corretas! Parabéns!";
+                resultado.style.color = "green";
+            } else {
+                resultado.textContent = "Algumas correspondências estão incorretas. Tente novamente.";
+                resultado.style.color = "red";
+            }
+        }
+    </script>
+    
+</body>
+</html>
