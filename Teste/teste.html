@@ -38,10 +38,46 @@
             margin-top: 20px;
             font-weight: bold;
         }
+
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .input-area {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .key {
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.2s;
+        }
+
+        .key:hover {
+            background-color: #e0e0e0;
+        }
     </style>
 </head>
 
 <body>
+    
     <h1>Relacione as palavras com seus significados</h1>
 
     <div class="container">
@@ -65,7 +101,13 @@
     <button onclick="verificar()">Verificar Respostas</button>
     <p class="feedback" id="resultado"></p>
 
-    <script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.js"></script>
+
+<div id="math-field" style="border: 1px solid black; padding: 10px;"></div>
+
+    <script>      
+        
         let itemSelecionado = null;
         const correspondencias = {};
 
@@ -122,6 +164,16 @@
                 resultado.style.color = "red";
             }
         }
+
+        var MQ = MathQuill.getInterface(2); // Interface do MathQuill
+    var mathField = MQ.MathField(document.getElementById('math-field'), {
+        handlers: {
+            edit: function() {
+                var enteredMath = mathField.latex(); // Pega a expressão LaTeX
+                console.log(enteredMath);
+            }
+        }
+    });
     </script>
 </body>
 </html>
