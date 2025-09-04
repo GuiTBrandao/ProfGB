@@ -1,7 +1,7 @@
 :root {
             font-size: 40px;
             --linha: 1rem;
-            --ajuste: 0.5rem;
+            --ajuste: 0.2rem;
         }
 
 body {
