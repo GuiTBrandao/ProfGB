@@ -33,3 +33,20 @@ a:visited {
   justify-content: center;
   align-items: center;
 }
+
+@keyframes blink {
+  0% {opacity: 1; color: cornflowerblue;}
+  50% {opacity: 1; color:orange;}
+  100% {opacity: 1; color:mediumpurple}
+}
+
+.piscando {
+  animation: blink 1s infinite;
+}
+
+.destaque{
+  background-color:rgb(181, 181, 181);
+  border-radius: 5%;
+  padding: 4%;
+  outline: auto;
+}
