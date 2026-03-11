@@ -11,7 +11,11 @@
 
 h1, h2, p, a {
     text-align: center;
+}
 
+.escondido {
+  color:steelblue;
+  text-decoration: none;
 }
 
 a:link {
@@ -23,6 +27,8 @@ a:visited {
   color:steelblue;
   text-decoration: none;
 }
+
+
 
 .lado {
     text-align: left;
