@@ -1,9 +1,11 @@
 
+
+
 body {
     margin: 40px auto;
     max-width: 90%;
     line-height: 1.6;
-    font-size:3vw;
+    font-size:20px;
     color: #444;
     padding: 0 10px;
     background-color: #eeeeeeda;
@@ -120,4 +122,12 @@ input {
 
 .caixa:has(#aba4:checked) #c4{
     display: block;
+}
+
+/* Ajuste dependendo da tela*/
+
+@media screen and (max-width: 500px) {
+  body{   
+    font-size: 3.3vw;
+  }
 }
