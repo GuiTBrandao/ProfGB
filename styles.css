@@ -12,7 +12,7 @@ body {
     font-family: Arial, Helvetica, sans-serif
   }
 
-h1, h2, p, a {
+h1, h2, h3, p, a {
     text-align: center;
 }
 
@@ -40,10 +40,19 @@ a:visited {
     text-align: left;
 }
 
+.justificado {
+  text-align: justify;
+}
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.legenda {
+  font-size: 2vw;
+  text-align:center;
 }
 
 /*Destaques*/
@@ -63,6 +72,46 @@ a:visited {
   border-radius: 5%;
   padding: 4%;
   outline: auto;
+}
+
+/*Grades*/
+
+.grade {
+  display:grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grade > div {
+  outline: 2px;
+  outline-color: black;
+  outline-style: dotted;
+  padding: 0px 10px 0px 10px;
+}
+
+.grade2 {
+  display:grid;
+  grid-template-columns: 6fr 2fr 2fr;
+  grid-template-rows: auto;
+}
+
+.grade2 > div {
+  display: flexbox;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.nota1 {
+  background-color: cadetblue;
+  
+}
+
+.nota2 {
+  background-color: coral;
+}
+
+.nota3 {
+  background-color: khaki;
 }
 
 /*Barra e Botões*/
@@ -87,6 +136,9 @@ label {
     width: 25%;
     margin: 0%;
     text-align: center;
+    outline-color: black;
+    outline-style:solid;
+    outline-width: 1px;
 }
 
 input {
@@ -96,6 +148,9 @@ input {
 
 .barra > label:has(input:checked){
     background-color:ghostwhite;
+    outline-color: black;
+    outline-style:solid;
+    outline-width: 1px;
 }
 
 .conteudo {
@@ -106,6 +161,9 @@ input {
     margin: auto;
     padding: 3%;
     box-sizing: border-box;
+    outline-color: black;
+    outline-style:solid;
+    outline-width: 1px;
 }
 
 .caixa:has(#aba1:checked) #c1{
@@ -129,5 +187,11 @@ input {
 @media screen and (max-width: 500px) {
   body{   
     font-size: 3.3vw;
+  }
+
+  .legenda {
+  font-size: 3vw;
+  text-align: center;
+  align-items: center;
   }
 }
