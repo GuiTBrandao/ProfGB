@@ -8,36 +8,128 @@
     
 
     <script>
-        async function FetchData() {
-            try{
+        const sala = {
+            sexto_ano: ["Fulano","Ciclano","Beltrano"],
+            setimo_ano: ["Mateus","Marcos","Lucas", "João"],
+            oitavo_ano: ["Ana Julia Sanvido","Carolina da Silva Schiabel","Gustavo LIma Davoli","Henrique Ambrozio","Igor Denardi Benedito","Isabella Morila de Cesare","Jaime Vendrame Villalva","Luiz Gustavo Mandu Raimundo","Manuella Gomes Ferreira","Maria Eduarda da Silva Pedroso","Maria Júlia Comito Meegon","Matheus Perinotti Tagliaferro","Matheus Pietro Sales de Aragão","Pedro Enzzo Garcia","Pedro Henrique de Lima Genuário","Piettra Cegatti Roman Jorgi","Rafael Vicente Marques de Souza","Sarah Gabriele Vitório","Sergio Paulo Berto de Lima","Sophia Moreira Moizes"],
+            nono_ano: ["Ana Lívia Nogueira","Emanuelle Ferreira da Cruz Gonzales","Enzo Sá da Silva","Guilherme Araujo de Faria","Henrique Gabriel Franco Bordignon","Izabella Portes","João Gabriel Marriel Paschoal","Larissa Nascimento Vitor","Laura de Amorim Salvador da Silva","Miguel Bitter Ribeiro","Renato Rufino","Victor Ferreira Rodrigues dos Santos","Vitor Gabriel Morila Marques"],
+            prim_med: ["Arthur Jorge Gutierrez","Danilo Enrique Alves","Emanuela Moreira Buscaratto","Emanuelly Aquila Carli","Gustavo de Carvalho Buffolo","Kauã Gabriel Barbosa","Manuela Bertoni CUnha","Matheus de SOuza barboza","Nicolas Ambrozio","Rafaela Dantas da Cunha Rogero","Valentina Simplício Garcia","Vitória Ferreira da Silva"],
+            segun_med: ["Ana Beatriz","Ana Clara Brito Vidolin","Christian Diogo da Silva","Daniel Guimarães da Mata","Gabriel Paulsen Cardozo","Giovanna Lopes da Silva","Guilherme Seksenian Godinho","João Paulo Garcia Françoso","João Pedro Américo Antonio","Lorena Oliva Bonfanti","Marcelo Leme de Oliveira","Maria Eduarda Rios Moreira","Vinicius Parenti","Yasmim Jhulia Guimarães"],
+            terc_med: ["Ana Luisa Rios Ribeiro","Ana Luiza DIniz de Paula","Arthur VIdal Siqueira Franco","Cauã Salgado de Rosa","Desirre Nicolle Nogarolli Ferreira Neto","Giovana Rodrigues Furigo","Igor Maroni Sabadini","João Marcelo Honorio Moraes","João Pedro Ribeiro Manara","João Vitor Coelho Silva","Juliano Aparecido Carvalho Selotto","Lia Amaral Gavazzi","Livia Frassetto","Maria Clara Silva Gomes","Maria Luisa Bianchi Malvezi","Olivia Teruel Silva","Pedro Augusto Domingos","Pedro Bertoni Cunha","Pedro Faiad","Rafael dos Santos Bueno","Rafael Mendes PIssinati","Raphael Gonçalves Pazine","Roberto Bapstilela Neto","Samuel Costa Vilares"]
+        };
 
-                const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
-                 const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+        function selecionarSala() {
+            const salaEscolhida = document.querySelector('input[name="sala"]:checked').value;
+            const select = document.getElementById("alunos");
 
-                if(!response.ok){
-                    throw new Error("Não consegui pegar");
-                }
+            select.innerHTML = '<option>Escolha um aluno</option>'
 
-                const data = await response.json();
-                const pokemonSprite = data.sprites.front_default;
-                const imgElement = document.getElementById("pokemonSprite");
-
-                imgElement.src = pokemonSprite;
-            }
-
-            catch(error){
-                console.error(error);
-            }
+            sala[salaEscolhida].forEach(item => {
+                const aluno = document.createElement("option");
+                aluno.value = item;
+                aluno.textContent = item;
+                select.appendChild(aluno);
+            });
         }
+
 
     </script>
 
 </head>
 <body>
-    <input type="text" id="pokemonName" placeholder="Enter Pokemon name">
-    <button onclick="FetchData()">Pegar Pokemon</button><br>
+    
 
-<img src="" alt="Pokemon Sprite" id="pokemonSprite">
+
+
+    <div style="text-align: center; margin: 40px;">
+    <form>
+        <p>Escolha a turma</p>
+            <label>
+                <input type="radio" name="sala" value="sexto_ano" onchange="selecionarSala()"> 6º Ano
+            </label>
+
+            <label>
+                <input type="radio" name="sala" value="setimo_ano" onchange="selecionarSala()"> 7º Ano
+            </label>
+
+            <label>
+                <input type="radio" name="sala" value="oitavo_ano" onchange="selecionarSala()"> 8º Ano
+            </label>
+
+            <label>
+                <input type="radio" name="sala" value="nono_ano" onchange="selecionarSala()"> 9º Ano
+            </label>
+
+            <label>
+                <input type="radio" name="sala" value="prim_med" onchange="selecionarSala()"> 1° Médio
+            </label>
+
+            <label>
+                <input type="radio" name="sala" value="segun_med" onchange="selecionarSala()"> 2° Médio
+            </label>
+
+            <label>
+                <input type="radio" name="sala" value="terc_med" onchange="selecionarSala()"> 3º Médio
+            </label>
+        <p>Escolha o aluno</p>
+            <select id="alunos">
+                <option>Escolha uma sala primeiro</option>
+            </select>
+
+        <p>Selecione os códigos A</p>
+            <input type="checkbox" name="codA" id="coda1" value="A1 "><label for coda1>A1</label>
+            <input type="checkbox" name="codA" id="coda2" value="A2 "><label for coda2>A2</label>
+            <input type="checkbox" name="codA" id="coda3" value="A3 "><label for coda3>A3</label>
+            <input type="checkbox" name="codA" id="coda4" value="A4 "><label for coda4>A4</label>
+            <input type="checkbox" name="codA" id="coda5" value="A5 "><label for coda5>A5</label>
+            <input type="checkbox" name="codA" id="coda6" value="A6 "><label for coda6>A6</label>
+            <input type="checkbox" name="codA" id="coda7" value="A7 "><label for coda7>A7</label>
+            <input type="checkbox" name="codA" id="coda8" value="A8 "><label for coda8>A8</label>
+            <input type="checkbox" name="codA" id="coda9" value="A9 "><label for coda9>A9</label>
+            <input type="checkbox" name="codA" id="coda10" value="A10 "><label for coda10>A10</label>
+            <input type="checkbox" name="codA" id="coda11" value="A11 "><label for coda11>A11</label>
+            <input type="checkbox" name="codA" id="coda12" value="A12 "><label for coda12>A12</label>
+            <input type="checkbox" name="codA" id="coda13" value="A13 "><label for coda13>A13</label>
+            <input type="checkbox" name="codA" id="coda14" value="A14 "><label for coda14>A14</label>
+            <input type="checkbox" name="codA" id="coda15" value="A15 "><label for coda15>A15</label>
+            <input type="checkbox" name="codA" id="coda16" value="A16 "><label for coda16>A16</label>
+            <input type="checkbox" name="codA" id="coda17" value="A17 "><label for coda17>A17</label>
+            <input type="checkbox" name="codA" id="coda18" value="A18 "><label for coda18>A18</label>
+            <input type="checkbox" name="codA" id="coda19" value="A19 "><label for coda19>A19</label>
+            <input type="checkbox" name="codA" id="coda20" value="A20 "><label for coda20>A20</label>
+
+
+        <p>Selecione os códigos B</p>
+            <input type="checkbox" name="codB" id="codb1" value="B1 "><label for codb1>B1</label>
+            <input type="checkbox" name="codB" id="codb2" value="B2 "><label for codb2>B2</label>
+            <input type="checkbox" name="codB" id="codb3" value="B3 "><label for codb3>B3</label>
+            <input type="checkbox" name="codB" id="codb4" value="B4 "><label for codb4>B4</label>
+            <input type="checkbox" name="codB" id="codb5" value="B5 "><label for codb5>B5</label>
+            <input type="checkbox" name="codB" id="codb6" value="B6 "><label for codb6>B6</label>
+            <input type="checkbox" name="codB" id="codb7" value="B7 "><label for codb7>B7</label>
+            <input type="checkbox" name="codB" id="codb8" value="B8 "><label for codb8>B8</label>
+            <input type="checkbox" name="codB" id="codb9" value="B9 "><label for codb9>B9</label>
+            <input type="checkbox" name="codB" id="codb10" value="B10 "><label for codb10>B10</label>
+            <input type="checkbox" name="codB" id="codb11" value="B11 "><label for codb11>B11</label>
+            <input type="checkbox" name="codB" id="codb12" value="B12 "><label for codb12>B12</label>
+            <input type="checkbox" name="codB" id="codb13" value="B13 "><label for codb13>B13</label>
+            <input type="checkbox" name="codB" id="codb14" value="B14 "><label for codb14>B14</label>
+            <input type="checkbox" name="codB" id="codb15" value="B15 "><label for codb15>B15</label>
+            <input type="checkbox" name="codB" id="codb16" value="B16 "><label for codb16>B16</label>
+            <input type="checkbox" name="codB" id="codb17" value="B17 "><label for codb17>B17</label>
+            <input type="checkbox" name="codB" id="codb18" value="B18 "><label for codb18>B18</label>
+            <input type="checkbox" name="codB" id="codb19" value="B19 "><label for codb19>B19</label>
+            <input type="checkbox" name="codB" id="codb20" value="B20 "><label for codb20>B20</label>
+
+            <br>
+
+            <br>
+        
+            <button onClick="alert('Códigos Enviados')" onClick="reset">Envio</button>
+            </form>
+    </div>
+    
+
 
 
 </body>
