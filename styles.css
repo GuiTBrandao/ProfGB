@@ -55,6 +55,30 @@ a:visited {
   text-align:center;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  cursor: pointer;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 300%;
+  background-color: whitesmoke;
+  color: rgb(65, 65, 65);
+  text-align: center;
+  outline: auto;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 /*Destaques*/
 
 @keyframes blink {
@@ -91,7 +115,7 @@ a:visited {
 
 .grade2 {
   display:grid;
-  grid-template-columns: 6fr 2fr 2fr;
+  grid-template-columns: 3fr 3fr 2fr 2fr;
   grid-template-rows: auto;
 }
 
@@ -112,6 +136,10 @@ a:visited {
 
 .nota3 {
   background-color: khaki;
+}
+
+.nota4 {
+  background-color:darkorchid;
 }
 
 /*Barra e Botões*/
