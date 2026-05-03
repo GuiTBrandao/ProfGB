@@ -6,6 +6,20 @@
     <title>3° Médio</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
+
+    <script>
+        const fim = 5
+    
+        window.onload = function Teste() {
+            const data = new Date();
+            const sinal = document.getElementById("indicador");
+
+            let dia = data.getDate();
+
+            if (fim > dia) 
+                {document.getElementById("indicador").innerHTML = "🔴";}
+        };
+    </script>
 </head>
 <body>
   <!-- Título -->
@@ -60,7 +74,7 @@
           <p>As lições serão postadas <strong>TODA</strong> Segunda, Quarta e Sexta</p>
           <p>Lembre-se: as lições de casa estão valendo <strong>2 pontos</strong> da avalição Formativa e cada uma que você não faz, você PERDE 0,2 pontos.</p>
           <ul>
-              <li><a>Lição 1 - 04/05</a></li>
+              <li><p id="indicador">🟢</p><a href="https://docs.google.com/forms/d/e/1FAIpQLSe7GhjSYM20FKcE4lHsEQD4iiAtli_MLRonr3UuPHRNEJq2zg/viewform?usp=dialog">Lição 1 - 04/05</a></li>
               <li><a>Lição 2 - 06/05</a></li>
               <li><a>Lição 3 - 08/05</a></li>
               <li><a>Lição 4 - 11/05</a></li>

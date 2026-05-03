@@ -6,14 +6,25 @@
     <title>1° Médio</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
+
+    
+    <script>
+        const fim = 5
+    
+        window.onload = function Teste() {
+            const data = new Date();
+            const sinal = document.getElementById("indicador");
+
+            let dia = data.getDate();
+
+            if (fim > dia) 
+                {document.getElementById("indicador").innerHTML = "🔴";}
+        };
+    </script>
 </head>
 <body>
 
 <h1>📏 1° Médio <a href="https://youtu.be/2LZqORqTQ0A">📐</a></h1>
-
-
-
-
 
   <div class="caixa">
       <!-- Barra -->
@@ -39,8 +50,8 @@
 <!-- Abas-->
       <div class="conteudo" id="c1">
           <p class="lado">• Avaliação Mensal: 26/05/26, uma terça-feira. O conteúdo será:<br>
-            <br>
-            <br>
+          <p>Funções e Inequações Quadráticas (Final do capítulo 2)</p><br>
+          <p>Equações, Inequações e Funções Exponenciais (Capítulo 4)</p><br>
           Lembrete: Esta prova é com 
             <span class="tooltip" style="color:steelblue"><strong>CONSULTA</strong>
                 <span class="tooltiptext">Você pode fazer um resumo para consultar durante a prova. Este resumo <strong>DEVE</strong> ser feito numa folha sulfite A4 branca, podendo-se utilizar a frente e o verso. 
@@ -48,8 +59,8 @@
             </span> 
           </p>
           <p class="lado"> • Avaliação Bimestral: 22/06/26, uma segunda-feira. O conteúdo será:<br>
-            <br>
-            <br>
+          <p>Equações, Inequações e Funções Exponenciais (Capítulo 4)</p><br>
+          <p>Equações, Inequações e Funções Logaritmicas (Capítulo 5)</p><br>
             Lembrete: Esta prova é <strong>SEM</strong> consulta.</p>
           <p class="lado">• Avaliação formativa:</p>
           <div class="grade2">
@@ -64,7 +75,7 @@
           <p>As lições serão postadas <strong>TODA</strong> Segunda, Quarta e Sexta</p>
           <p>Lembre-se: as lições de casa estão valendo <strong>2 pontos</strong> da avalição Formativa e cada uma que você não faz, você PERDE 0,2 pontos.</p>
           <ul>
-              <li><a>Lição 1 - 04/05</a></li>
+              <li><p id="indicador">🟢</p><a href="https://docs.google.com/forms/d/e/1FAIpQLScbsVS2R5aaz12XQqai3s7xO2cHb1yUlNId83G-lglF3daeWA/viewform?usp=publish-editor">Lição 1 - 04/05</a></li>
               <li><a>Lição 2 - 06/05</a></li>
               <li><a>Lição 3 - 08/05</a></li>
               <li><a>Lição 4 - 11/05</a></li>
