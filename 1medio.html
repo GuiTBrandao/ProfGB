@@ -17,8 +17,8 @@
 
             let dia = data.getDate();
 
-            if (fim > dia) 
-                {document.getElementById("indicador").innerHTML = "🔴";}
+            if (dia > fim) 
+                {document.getElementById("indicador").innerHTML = "🔴 ";}
         };
     </script>
 </head>
@@ -75,7 +75,7 @@
           <p>As lições serão postadas <strong>TODA</strong> Segunda, Quarta e Sexta</p>
           <p>Lembre-se: as lições de casa estão valendo <strong>2 pontos</strong> da avalição Formativa e cada uma que você não faz, você PERDE 0,2 pontos.</p>
           <ul>
-              <li><p id="indicador">🟢</p><a href="https://docs.google.com/forms/d/e/1FAIpQLScbsVS2R5aaz12XQqai3s7xO2cHb1yUlNId83G-lglF3daeWA/viewform?usp=publish-editor">Lição 1 - 04/05</a></li>
+              <li><span id="indicador">🟢 </span><a href="https://docs.google.com/forms/d/e/1FAIpQLScbsVS2R5aaz12XQqai3s7xO2cHb1yUlNId83G-lglF3daeWA/viewform?usp=publish-editor">Lição 1 - 04/05</a></li>
               <li><a>Lição 2 - 06/05</a></li>
               <li><a>Lição 3 - 08/05</a></li>
               <li><a>Lição 4 - 11/05</a></li>
