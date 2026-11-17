@@ -1,15 +1,15 @@
 body {
     margin: 40px auto;
     max-width: 90%;
-    line-height: 1.6;
-    font-size:20px;
+    line-height: 1.2;
+    font-size:25px;
     color: #444;
     padding: 0 10px;
     background-color: #eeeeeeda;
     font-family: Arial, Helvetica, sans-serif
   }
 
-h1, h2, h3, p, a {
+h1, h2, h3, a {
     text-align: center;
 }
 
@@ -33,51 +33,6 @@ a:visited {
   text-decoration: none;
 }
 
-.lado {
-    text-align: left;
-}
-
-.justificado {
-  text-align: justify;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.legenda {
-  font-size: 2vw;
-  text-align:center;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-  cursor: pointer;
-}
-
-.tooltiptext {
-  visibility: hidden;
-  width: 300%;
-  background-color: whitesmoke;
-  color: rgb(65, 65, 65);
-  text-align: center;
-  outline: auto;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  top: 100%;
-  left:50%;
-  margin-left: -150%;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
 
 /*Destaques*/
 
@@ -98,7 +53,55 @@ a:visited {
   outline: auto;
 }
 
-/*Grades*/
+.topico {
+  margin: 2%;
+}
+
+/* Grades Novas */
+
+.estrutura {
+  display:grid;
+  grid-template-areas: 
+    "geral geral geral"
+    "medio1 medio2 medio3"
+    "extras extras extras";
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3px;
+  background-color: #444;
+  padding: 5px;
+}
+
+.estrutura div {
+  background-color: #eeeeeeda;
+  text-align: center;
+}
+
+.estrutura div.geral {
+  grid-area: geral;
+  text-align: center;
+}
+
+.estrutura div.medio1 {
+  grid-area: medio1;
+  text-align: center;
+}
+
+.estrutura div.medio2 {
+  grid-area: medio2;
+  text-align: center;
+}
+
+.estrutura div.medio3 {
+  grid-area: medio3;
+  text-align: center;
+}
+
+.estrutura div.extras {
+  grid-area: extras;
+  text-align: center;
+}
+
+/*Grades deletar em breve */
 
 .grade {
   display:grid;
