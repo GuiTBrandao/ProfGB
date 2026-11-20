@@ -1,9 +1,9 @@
 body {
     margin: 40px auto;
-    max-width: 90%;
+    max-width: 98%;
     line-height: 1.2;
     font-size:25px;
-    color: #444;
+    color: black;
     padding: 0 10px;
     background-color: #eeeeeeda;
     font-family: Arial, Helvetica, sans-serif
@@ -11,6 +11,11 @@ body {
 
 h1, h2, h3, a {
     text-align: center;
+}
+
+
+ul, li {
+  text-align: left;
 }
 
 img {
@@ -25,11 +30,15 @@ img {
 
 a:link {
   color:steelblue;
+  padding: 0 10% 0 20px;
+  background-color: hsla(0, 0%, 100%, 0.9);
   text-decoration: none;
 }
 
 a:visited {
   color:steelblue;
+  padding: 0 10% 0 20px;
+  background-color: hsla(0, 0%, 100%, 0.9);
   text-decoration: none;
 }
 
@@ -66,42 +75,47 @@ a:visited {
     "medio1 medio2 medio3"
     "extras extras extras";
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 5px;
-  background-color: #444;
+  gap: 15px;
   padding: 5px;
 }
 
 .estrutura div {
-  background-color: #eeeeeeda;
   text-align: center;
 }
 
 .estrutura div.geral {
   grid-area: geral;
   text-align: center;
+  background-color: #FF9800;
+  filter: drop-shadow(3px 3px 5px);
 }
 
 .estrutura div.medio1 {
   grid-area: medio1;
   text-align: center;
-  background-color: #8BC34A;
+  background-color: #B2FF59;
+  filter: drop-shadow(3px 3px 5px);
 }
 
 .estrutura div.medio2 {
   grid-area: medio2;
   text-align: center;
-  background-color: #0288D1;
+  background-color: #B3E5FC;
+  filter: drop-shadow(3px 3px 5px);
 }
 
 .estrutura div.medio3 {
   grid-area: medio3;
   text-align: center;
-  background-color: #FFFB00;
+  background-color: #FFEA00;
+  filter: drop-shadow(3px 3px 5px);
 }
 
 .estrutura div.extras {
   grid-area: extras;
   text-align: center;
+  background-color: #C2A6E6;
+  filter: drop-shadow(3px 3px 5px);
 }
 
 /*Grades deletar em breve */
